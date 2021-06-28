@@ -17,7 +17,7 @@ const routes = [
   },
 ];
 
-function App() {
+const App = () => {
   const [tableData, onSetTableData] = useState(data);
   const [inputValue, onSetInputValue] = useState("");
 
