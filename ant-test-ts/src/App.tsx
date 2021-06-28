@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Layout } from "antd";
 import { PageHeader, Input, Form, Button } from "antd";
 import SiderNav from "./components/SiderNav/SiderNav";
@@ -24,7 +24,7 @@ function App() {
   const { Header, Sider, Content } = Layout;
 
   const onAddNew = () => {
-    onSetTableData((prevTableData) => {
+    onSetTableData((prevTableData: any) => {
       return [
         ...prevTableData,
         {
@@ -43,11 +43,11 @@ function App() {
     onSetInputValue("");
   };
 
-  const onChangeInput = (e) => {
+  const onChangeInput = (e: any) => {
     onSetInputValue(e.target.value);
   };
 
-  const getAllItems = (allItems) => {
+  const getAllItems = (allItems: any) => {
     if (allItems.length === 0) {
       onSetTableData([...data]);
     } else {

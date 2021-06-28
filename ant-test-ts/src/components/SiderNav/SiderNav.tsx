@@ -1,5 +1,9 @@
-import React from "react";
 import { Menu, Checkbox } from "antd";
+import { IPropsData } from "../TableContent/TableContent";
+
+interface IProps extends IPropsData {
+  onGetAllItems: Function;
+}
 
 const checkboxItemsConfig = [
   { name: "Received" },
@@ -9,15 +13,15 @@ const checkboxItemsConfig = [
   { name: "Delivered" },
 ];
 
-const SiderNav = (props) => {
+const SiderNav = (props: IProps) => {
   const { SubMenu } = Menu;
-  let filterNamesStatus = [];
+  let filterNamesStatus: any = [];
 
-  const handleClick = (e) => {
+  const handleClick = (e: any) => {
     // console.log("click ", e);
   };
 
-  const onChange = (e, data) => {
+  const onChange = (e: any, data: any) => {
     if (e.target.checked) {
       filterNamesStatus.push(e.target.name);
     } else {
@@ -27,7 +31,7 @@ const SiderNav = (props) => {
       }
     }
 
-    const fullArray = data.map((item) => {
+    const fullArray = data.map((item: any) => {
       for (let i = 0; i < filterNamesStatus.length; i++) {
         if (item.status === filterNamesStatus[i]) {
           return { ...item };
@@ -35,7 +39,9 @@ const SiderNav = (props) => {
       }
     });
 
-    const onlyItemsToDisplay = fullArray.filter((item) => item !== undefined);
+    const onlyItemsToDisplay = fullArray.filter(
+      (item: any) => item !== undefined
+    );
     props.onGetAllItems(onlyItemsToDisplay);
   };
 
