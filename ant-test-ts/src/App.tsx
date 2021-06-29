@@ -17,7 +17,7 @@ const routes = [
   },
 ];
 
-const App = () => {
+const App: React.FC<any> = props => {
   const [tableData, onSetTableData] = useState(data);
   const [inputValue, onSetInputValue] = useState("");
 

@@ -13,7 +13,7 @@ const checkboxItemsConfig = [
   { name: "Delivered" },
 ];
 
-const SiderNav = (props: IProps) => {
+const SiderNav: React.FC<IProps> = props => {
   const { SubMenu } = Menu;
   let filterNamesStatus: any = [];
 

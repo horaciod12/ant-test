@@ -64,7 +64,7 @@ const columns = [
   },
 ];
 
-const TableContent = (props: IPropsData) => {
+const TableContent: React.FC<IPropsData> = props => {
   return (
     <Table
       style={{ margin: "20px" }}
