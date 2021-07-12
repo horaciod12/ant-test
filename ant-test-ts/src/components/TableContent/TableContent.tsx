@@ -71,6 +71,7 @@ const TableContent: React.FC<IPropsData> = props => {
       columns={columns}
       dataSource={props.data}
       pagination={{ pageSize: 5 }}
+      scroll={{ x: 869 }}
     />
   );
 };
